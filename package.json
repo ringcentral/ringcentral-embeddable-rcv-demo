@@ -9,10 +9,9 @@
     "fix": "./node_modules/.bin/standard --fix"
   },
   "license": "MIT",
-  "langugeRepo": "https://github.com/electerm/electerm-locales",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electerm/electerm.git"
+    "url": "git+https://github.com/ringcentral/ringcentral-embeddable-rcv-demo.git"
   },
   "author": {
     "name": "ZHAO Xudong",
@@ -20,7 +19,7 @@
     "url": "https://html5beta.com"
   },
   "bugs": {
-    "url": "https://github.com/electerm/electerm/issues"
+    "url": "https://github.com/ringcentral/ringcentral-embeddable-rcv-demo/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
