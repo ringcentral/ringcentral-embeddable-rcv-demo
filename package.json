@@ -72,7 +72,7 @@
   "standard": {
     "parser": "babel-eslint",
     "ignore": [
-      "/docs/assets/"
+      "/docs/"
     ],
     "globals": [
       "describe",
