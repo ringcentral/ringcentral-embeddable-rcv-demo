@@ -5,8 +5,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 const { Search } = Input
 
 export default function Index () {
-  const registered = useRef(null)
-  const [loading, setLoading] = useState(false)
+  const registered = useRef(false)
+  const [loading, setLoading] = useState(true)
   function postMessage (data) {
     document.querySelector('#rc-widget-adapter-frame').contentWindow.postMessage(data, '*')
   }
@@ -26,15 +26,18 @@ export default function Index () {
   function showEvent (title, data) {
     Modal.info({
       title: 'Incoming event: ' + title,
+      width: '90%',
+      height: '90%',
       content: (
         <SyntaxHighlighter language='javascript'>
-          {JSON.stringify(data)}
+          {JSON.stringify(data, null, 2)}
         </SyntaxHighlighter>
       )
     })
   }
   function onEvent (e) {
     const { data = {} } = e
+    console.log('data', data)
     const { type, path, requestId } = data
     if (type !== 'rc-post-message-request') {
       return
@@ -90,12 +93,14 @@ export default function Index () {
     window.addEventListener('message', onEvent)
   }
   function init (e) {
-    const data = e.data
+    console.log('event', e.data)
+    const { data } = e
     if (
       data &&
       data.type === 'rc-adapter-pushAdapterState' &&
       registered.current === false
     ) {
+      console.log('init')
       registered.current = true
       registerService()
       window.removeEventListener('message', init)
@@ -130,10 +135,10 @@ export default function Index () {
       <div className='pd2y'>
         <ul>
           <li>
-            <a href='https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md'>ringcentral-embeddable/third-party-service-in-widget.md</a>
+            <a target='_blank' href='https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md'>ringcentral-embeddable/third-party-service-in-widget.md</a>
           </li>
           <li>
-            <a href='https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md'>Code of current page</a>
+            <a target='_blank' href='https://github.com/ringcentral/ringcentral-embeddable-rcv-demo/blob/main/src/client/index.jsx'>Code of current page</a>
           </li>
         </ul>
       </div>

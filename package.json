@@ -4,7 +4,7 @@
   "description": "A demo shows how to use RCV in ringcentral-embeddable",
   "scripts": {
     "start": "node -r @babel/register -r dotenv/config ./src/server/app.js",
-    "c": "NODE_ENV=production webpack --config webpack.config.js",
+    "build": "rm -rf docs/* && NODE_ENV=production webpack --watch --config webpack.config.js",
     "lint": "./node_modules/.bin/standard",
     "fix": "./node_modules/.bin/standard --fix"
   },
@@ -14,9 +14,8 @@
     "url": "git+https://github.com/ringcentral/ringcentral-embeddable-rcv-demo.git"
   },
   "author": {
-    "name": "ZHAO Xudong",
-    "email": "zxdong@gmail.com",
-    "url": "https://html5beta.com"
+    "name": "Drake Zhao",
+    "email": "drake.zhao@ringcentral.com"
   },
   "bugs": {
     "url": "https://github.com/ringcentral/ringcentral-embeddable-rcv-demo/issues"

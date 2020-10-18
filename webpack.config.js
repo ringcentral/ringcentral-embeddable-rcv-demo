@@ -7,7 +7,7 @@ const path = require('path')
 const pack = require('./package.json')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { env } = process
-const devPort = env.devPort || 5570
+const devPort = env.devPort || 5070
 const host = env.host || 'localhost'
 
 const version = pack.version
@@ -20,7 +20,9 @@ const pug = {
   options: {
     data: {
       version,
+      cdn: '',
       _global: {
+        cdn: '',
         version
       }
     }
@@ -35,6 +37,7 @@ const stylusSettingPlugin = new webpack.LoaderOptionsPlugin({
 })
 
 var config = {
+  watch: true,
   mode: 'development',
   entry: {
     rc: './src/client/rc.jsx',
@@ -42,16 +45,15 @@ var config = {
   },
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: 'js/[name].' + version + '.js',
+    filename: 'js/[name]' + '.bundle.js',
     publicPath: '/',
-    chunkFilename: 'js/[name].' + version + '.js',
+    chunkFilename: 'js/[name]' + '.bundle.js',
     libraryTarget: 'var'
   },
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
   },
-  watch: true,
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.json']
   },
@@ -137,6 +139,16 @@ var config = {
     inline: true,
     host,
     port: devPort,
+    proxy: {
+      '/': {
+        target: `http://${env.RINGCENTRAL_HOST}:${env.RINGCENTRAL_PORT}`,
+        bypass: function (req, res, proxyOptions) {
+          if (req.path.includes('.bundle.')) {
+            return req.path
+          }
+        }
+      }
+    },
     before: (app) => {
       app.use('/node_modules', express.static(
         path.resolve(__dirname, './node_modules'), { maxAge: '170d' })

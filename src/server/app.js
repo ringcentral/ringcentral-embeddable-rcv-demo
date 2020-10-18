@@ -3,7 +3,7 @@ import Express from 'express'
 import { resolve } from 'path'
 
 const app = new Express()
-const staticPath = resolve(__dirname, 'docs/assets')
+const staticPath = resolve(process.cwd(), 'docs')
 app.use(Express.static(staticPath))
 
 const {
@@ -12,5 +12,5 @@ const {
 } = process.env
 
 app.listen(port, host, () => {
-  console.log(`-> server running at: http://${host}:${port}${APP_HOME}`)
+  console.log(`-> server running at: http://${host}:${port}`)
 })
