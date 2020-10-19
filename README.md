@@ -30,7 +30,7 @@ npm run build
 # then visit http://{RINGCENTRAL_HOST}:{RINGCENTRAL_PORT}
 ```
 
-Once tbe web page is up, login with a RingCentral Sandbox account and then use the demo to open the Embeddable meeting panel or dial a phone number.
+Once the web page is up, login with a RingCentral Sandbox account and then use the demo to open the Embeddable meeting panel or dial a phone number.
 
 ## License
 
