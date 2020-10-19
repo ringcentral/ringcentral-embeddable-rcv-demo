@@ -1,6 +1,6 @@
-# ringcentral-embeddable-rcv-demo
+# RingCentral Embeddable Video Demo
 
-A demo shows how to use RCV in ringcentral-embeddable
+This demo shows how to integrate RingCentral Video using [RingCentral Embeddable web widget](https://github.com/ringcentral/ringcentral-embeddable).
 
 * Demo page: [https://ringcentral.github.io/ringcentral-embeddable-rcv-demo/index.html](https://ringcentral.github.io/ringcentral-embeddable-rcv-demo/index.html)
 * Main source code: [index.jsx](src/client/index.jsx)
@@ -8,8 +8,12 @@ A demo shows how to use RCV in ringcentral-embeddable
 ## Dev
 
 ```bash
-npm i
-cp .env.sample .env
+# Install code
+$ git clone https://github.com/ringcentral/ringcentral-embeddable-rcv-demo
+
+$ cd ringcentral-embddable-rcv-demo
+$ npm i
+$ cp .env.sample .env
 
 # start local server
 npm start
@@ -17,7 +21,7 @@ npm start
 # build code
 npm run build
 
-# then visit
+# then visit http://{RINGCENTRAL_HOST}:{RINGCENTRAL_PORT}
 ```
 
 ## License
