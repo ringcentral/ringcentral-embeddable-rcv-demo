@@ -9,6 +9,9 @@ You can try out a live demo here:
 You an inspect the demo source code here:
 
 * Main Source Code: [index.jsx](src/client/index.jsx)
+
+Also we have a demo video:
+
 * Video: [https://youtu.be/zo9G1QVtQ-A](https://youtu.be/zo9G1QVtQ-A)
 
 ## Usage
