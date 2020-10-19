@@ -2,10 +2,10 @@
 
 This demo shows how to integrate RingCentral Video using [RingCentral Embeddable web widget](https://github.com/ringcentral/ringcentral-embeddable).
 
-* Demo page: [https://ringcentral.github.io/ringcentral-embeddable-rcv-demo/index.html](https://ringcentral.github.io/ringcentral-embeddable-rcv-demo/index.html)
-* Main source code: [index.jsx](src/client/index.jsx)
+* Live Demo: [https://ringcentral.github.io/ringcentral-embeddable-rcv-demo/index.html](https://ringcentral.github.io/ringcentral-embeddable-rcv-demo/index.html)
+* Main Source Code: [index.jsx](src/client/index.jsx)
 
-## Dev
+## Usage
 
 ```bash
 # Install code
