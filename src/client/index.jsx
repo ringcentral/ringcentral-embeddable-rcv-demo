@@ -133,12 +133,16 @@ export default function Index () {
         </p>
       </Spin>
       <div className='pd2y'>
+        <h2>Links</h2>
         <ul>
           <li>
             <a target='_blank' href='https://github.com/ringcentral/ringcentral-embeddable/blob/master/docs/third-party-service-in-widget.md'>ringcentral-embeddable/third-party-service-in-widget.md</a>
           </li>
           <li>
             <a target='_blank' href='https://github.com/ringcentral/ringcentral-embeddable-rcv-demo/blob/main/src/client/index.jsx'>Code of current page</a>
+          </li>
+          <li>
+            <a target='_blank' href='https://youtu.be/zo9G1QVtQ-A'>Video</a>
           </li>
         </ul>
       </div>
